@@ -1,0 +1,40 @@
+netcdf NSs2_mesh_mask_renamed {
+dimensions:
+	t = UNLIMITED ; // (1 currently)
+	z = 51 ;
+	eta_rho = 766 ;
+	xi_rho = 560 ;
+	eta_v = 766 ;
+	xi_v = 560 ;
+	eta_u = 766 ;
+	xi_u = 560 ;
+variables:
+	double e3t_0(t, z, eta_rho, xi_rho) ;
+	double e3w_0(t, z, eta_rho, xi_rho) ;
+	double h(t, eta_rho, xi_rho) ;
+	float lat_rho(eta_rho, xi_rho) ;
+	float lat_v(eta_v, xi_v) ;
+	float lon_rho(eta_rho, xi_rho) ;
+	float lon_v(eta_v, xi_v) ;
+	byte mask_rho(t, eta_rho, xi_rho) ;
+	byte mask_v(t, eta_v, xi_v) ;
+	short mbathy(t, eta_rho, xi_rho) ;
+	float lat_u(eta_u, xi_u) ;
+	float lon_u(eta_u, xi_u) ;
+	byte mask_u(t, eta_u, xi_u) ;
+
+// global attributes:
+		:file_name = "mesh_mask.nc" ;
+		:TimeStamp = "22/09/2016 21:46:41 +0100" ;
+		:history = "Tue Dec 20 22:20:59 2016: ncrename -v lon,lon_u -v lat,lat_u -d x,xi_u -d y,eta_u -v umaskutil,mask_u NSs2_mesh_mask_renamed.nc\n",
+			"Tue Dec 20 22:19:29 2016: ncks -v umaskutil,lat,lon NSs2_mesh_mask.nc NSs2_mesh_mask_renamed.nc\n",
+			"Tue Dec 20 21:30:51 2016: ncrename -v lon_rho,lon -v lat_rho,lat NSs2_mesh_mask.nc NSs2_mesh_mask.nc\n",
+			"Tue Dec 20 20:48:16 2016: ncrename -d xi_rho,x -d eta_rho,y NSs2_mesh_mask.nc NSs2_mesh_mask.nc\n",
+			"Tue Dec 20 20:43:51 2016: ncrename -v nav_lon,lon_rho -v nav_lat,lat_rho NSs2_mesh_mask.nc NSs2_mesh_mask.nc\n",
+			"Tue Dec 20 20:02:57 2016: ncrename -v tmaskutil,mask_rho NSs2_mesh_mask.nc NSs2_mesh_mask.nc\n",
+			"Tue Dec 20 20:00:25 2016: ncrename -d lat_rho,eta_rho -d lon_rho,xi_rho NSs2_mesh_mask.nc NSs2_mesh_mask.nc\n",
+			"Tue Dec 20 19:58:01 2016: ncrename -v hbatt,h NSs2_mesh_mask.nc NSs2_mesh_mask.nc\n",
+			"Tue Dec 20 19:57:02 2016: ncrename -d x,lon_rho -d y,lat_rho NSs2_mesh_mask.nc NSs2_mesh_mask.nc\n",
+			"Wed Dec 14 18:01:58 2016: ncks -d x,560, -d y,674, mesh_mask.nc NSs2_mesh_mask.nc" ;
+		:NCO = "20161220" ;
+}

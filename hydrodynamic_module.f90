@@ -281,8 +281,11 @@ CONTAINS
 
       ! angle between x-coordinate and true east direction (radian)
       STATUS = NF90_INQ_VARID(NCID,'angle',VID)
-      if (STATUS .NE. NF90_NOERR) write(*,*) 'Problem find angle'
-      if (STATUS .NE. NF90_NOERR) write(*,*) NF90_STRERROR(STATUS)
+      if (STATUS .NE. NF90_NOERR) THEN
+      write(*,*) 'Problem find angle'
+      write(*,*) NF90_STRERROR(STATUS)
+        angle=0
+      ELSE
       STATUS = NF90_GET_VAR(NCID,VID,angle)
       if (STATUS .NE. NF90_NOERR) write(*,*) 'Problem read angle'
       if (STATUS .NE. NF90_NOERR) write(*,*) NF90_STRERROR(STATUS)
@@ -1041,7 +1044,7 @@ CONTAINS
         STATUS = NF90_GET_VAR(NCID,VID,nromV(t_ijruv(9):t_ijruv(10),            &
                               t_ijruv(11):t_ijruv(12),:,:),STARTr,COUNTr)
 	do l=1,us !Flip over NEMO
-        romV(:,:,l,:)=romV(:,:,(us+1)-l,:)
+        romV(:,:,l,:)=nromV(:,:,(us+1)-l,:)
 	enddo
 	!write(*,*) 'V'
  	!write(*,*) romV
