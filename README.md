@@ -13,7 +13,7 @@ The following routines were modified:
 
 - LTRANS.f90
 
-Also, a *Lophelia* bahaviour was added in behaviour_module.f90, as described in:
+Also, a ***Lophellia*** bahavior was added in behaviour_module.f90, as described in:
 
 Henry, LA., Mayorga-Adame, C.G., Fox, A.D. et al. Ocean sprawl facilitates dispersal and connectivity of protected species. Sci Rep 8, 11346 (2018). https://doi.org/10.1038/s41598-018-29575-4
 
