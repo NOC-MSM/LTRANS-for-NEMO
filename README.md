@@ -7,12 +7,11 @@ Vtransform = 5 in the input file LTRANS.data was added to activate it.
 Main code changes make LTRANS understands the vertical grid of NEMO. 
 The following routines were modified:
 
-- parameter_module.f90,
+- parameter_module.f90
 
+- initGrid() in hydrodynamic_module.f90
 
-- hydrodynamic_module.f90, initGrid()
-
-- LTRANS.f90.
+- LTRANS.f90
 
 Also a Lophelia bahaviour was added in behaviour_module.f90, as described in:
 
