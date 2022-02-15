@@ -1,6 +1,6 @@
 # LTRANS-for-NEMO
 
-LTRANSv2 modified to work with NEMO.
+This is the [LTRANSv2 code](https://northweb.hpl.umces.edu/LTRANS.htm) modified to work with NEMO. 
 
 Vtransform = 5 in the input file LTRANS.data was added to activate it. 
 
